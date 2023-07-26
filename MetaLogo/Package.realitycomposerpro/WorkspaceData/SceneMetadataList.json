@@ -1,0 +1,138 @@
+{
+  "279C7017-A3A3-467C-968A-8F50344FC095" : {
+    "cameraTransform" : [
+      0.40808779001235962,
+      0,
+      -0.91294258832931519,
+      0,
+      -0.20016765594482422,
+      0.97566747665405273,
+      -0.089475587010383606,
+      0,
+      0.89072829484939575,
+      0.21925552189350128,
+      0.39815807342529297,
+      0,
+      8.5890226364135742,
+      1.9554352760314941,
+      2.0048525333404541,
+      1
+    ],
+    "objectMetadataList" : [
+      [
+        "279C7017-A3A3-467C-968A-8F50344FC095",
+        "Root",
+        "Material"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "279C7017-A3A3-467C-968A-8F50344FC095",
+        "Root",
+        "untitled",
+        "Material"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "279C7017-A3A3-467C-968A-8F50344FC095",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "279C7017-A3A3-467C-968A-8F50344FC095",
+        "Root",
+        "untitled2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "279C7017-A3A3-467C-968A-8F50344FC095",
+        "Root",
+        "untitled",
+        "______"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "362EE892-8B9F-4134-9EB7-165D27806178" : {
+    "cameraTransform" : [
+      0.0095492862164974213,
+      -5.8207660913467407e-11,
+      -0.99995434284210205,
+      0,
+      -0.092072494328022003,
+      0.99575185775756836,
+      -0.00087926367996260524,
+      0,
+      0.99570649862289429,
+      0.092076726257801056,
+      0.009508717805147171,
+      0,
+      10.218348503112793,
+      0.94492828845977783,
+      0.097583673894405365,
+      1
+    ],
+    "objectMetadataList" : [
+      [
+        "362EE892-8B9F-4134-9EB7-165D27806178",
+        "Root",
+        "torus"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "362EE892-8B9F-4134-9EB7-165D27806178",
+        "Root",
+        "torus",
+        "Material"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "362EE892-8B9F-4134-9EB7-165D27806178",
+        "Root",
+        "untitled2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "362EE892-8B9F-4134-9EB7-165D27806178",
+        "Root",
+        "torus",
+        "Material_Compose"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "362EE892-8B9F-4134-9EB7-165D27806178",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  }
+}
