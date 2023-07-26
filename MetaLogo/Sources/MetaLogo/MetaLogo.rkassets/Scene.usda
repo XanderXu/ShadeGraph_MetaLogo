@@ -83,7 +83,7 @@ def Xform "Root"
                 float3 outputs:out
                 float2 ui:nodegraph:node:pos = (-314.89545, -169.25635)
                 float2 ui:nodegraph:node:size = (60, 36)
-                int ui:nodegraph:node:stackingOrder = 1055
+                int ui:nodegraph:node:stackingOrder = 1460
             }
 
             def Shader "Add"
@@ -445,6 +445,8 @@ def Xform "Root"
                 float2 ui:nodegraph:node:pos = (-194.51707, -144.88103)
                 float2 ui:nodegraph:node:size = (120, 99)
                 int ui:nodegraph:node:stackingOrder = 1128
+                float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (780.5, 72.5)
+                float2 ui:nodegraph:realitykit:subgraphOutputs:size = (177.49918, 99)
 
                 def Shader "Multiply"
                 {
@@ -452,16 +454,16 @@ def Xform "Root"
                     float3 inputs:in1.connect = </Root/torus/Material_Compose/CenterLine/Normal.outputs:out>
                     float inputs:in2 = -0.25
                     float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (-314.89545, -169.25635)
+                    float2 ui:nodegraph:node:pos = (255.25, 50.75)
                     float2 ui:nodegraph:node:size = (60, 36)
-                    int ui:nodegraph:node:stackingOrder = 1141
+                    int ui:nodegraph:node:stackingOrder = 1142
                 }
 
                 def Shader "Normal"
                 {
                     uniform token info:id = "ND_normal_vector3"
                     float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (-430.59598, -177.38489)
+                    float2 ui:nodegraph:node:pos = (64.25, 50.75)
                     float2 ui:nodegraph:node:size = (128.5, 40)
                     int ui:nodegraph:node:stackingOrder = 1141
                 }
@@ -473,7 +475,7 @@ def Xform "Root"
                     float outputs:outx
                     float outputs:outy
                     float outputs:outz
-                    float2 ui:nodegraph:node:pos = (-128.86594, -145.50044)
+                    float2 ui:nodegraph:node:pos = (563, 72.5)
                     float2 ui:nodegraph:node:size = (119, 145)
                     int ui:nodegraph:node:stackingOrder = 1141
                 }
@@ -484,7 +486,7 @@ def Xform "Root"
                     float3 inputs:in1.connect = </Root/torus/Material_Compose/CenterLine/Multiply.outputs:out>
                     float3 inputs:in2.connect = </Root/torus/Material_Compose/CenterLine/Position.outputs:out>
                     float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (-230.77985, -151.16083)
+                    float2 ui:nodegraph:node:pos = (412.75, 72.5)
                     float2 ui:nodegraph:node:size = (61.5, 36.5)
                     int ui:nodegraph:node:stackingOrder = 1141
                     string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:in1"]
@@ -494,7 +496,7 @@ def Xform "Root"
                 {
                     uniform token info:id = "ND_position_vector3"
                     float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (-427.0957, -125.928955)
+                    float2 ui:nodegraph:node:pos = (255.25, 168.75)
                     float2 ui:nodegraph:node:size = (133.5, 40)
                     int ui:nodegraph:node:stackingOrder = 1141
                 }
@@ -603,7 +605,7 @@ def Xform "Root"
                 prepend float3 outputs:Normalize_1_out.connect = </Root/torus/Material_Compose/OffsetNormal/Normalize_1.outputs:out>
                 float2 ui:nodegraph:node:pos = (437.35654, 57.302265)
                 float2 ui:nodegraph:node:size = (138, 127)
-                int ui:nodegraph:node:stackingOrder = 1258
+                int ui:nodegraph:node:stackingOrder = 1290
 
                 def Shader "Bitangent"
                 {
@@ -707,7 +709,7 @@ def Xform "Root"
                 prepend float3 outputs:Add_1_out.connect = </Root/torus/Material_Compose/RecoverSmallRing/Add_1.outputs:out>
                 float2 ui:nodegraph:node:pos = (644.32117, -128.64569)
                 float2 ui:nodegraph:node:size = (164, 127)
-                int ui:nodegraph:node:stackingOrder = 1276
+                int ui:nodegraph:node:stackingOrder = 1289
 
                 def Shader "Multiply_6"
                 {
