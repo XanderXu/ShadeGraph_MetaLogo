@@ -8,31 +8,6 @@
 def Xform "Root"
 {
     reorder nameChildren = ["untitled", "Material"]
-    def "untitled2" (
-        active = false
-        customData = {
-            float3 rotationEulerHint = (1.5707964, 0, 0)
-        }
-        references = @untitled2.usdc@</______>
-    )
-    {
-        quatf xformOp:orient = (0.70710677, 0.70710677, 0, 0)
-        float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (0, 0, 0)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-
-        over "______" (
-            prepend apiSchemas = ["MaterialBindingAPI"]
-        )
-        {
-            rel material:binding = </Root/torus/Material> (
-                bindMaterialAs = "weakerThanDescendants"
-            )
-            float3 xformOp:translate = (0, 0, 0)
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-        }
-    }
-
     def "torus" (
         active = true
         references = @torus.usdc@</______>
@@ -333,7 +308,7 @@ def Xform "Root"
                 float3 outputs:out
                 float2 ui:nodegraph:node:pos = (978.59296, 23.47303)
                 float2 ui:nodegraph:node:size = (167.5, 53)
-                int ui:nodegraph:node:stackingOrder = 1443
+                int ui:nodegraph:node:stackingOrder = 1457
             }
 
             def Shader "Tangent"
