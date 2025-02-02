@@ -24,10 +24,10 @@ def Xform "Root"
         )
         {
             prepend token outputs:mtlx:surface.connect = </Root/torus/Material/MaterialXPreviewSurface.outputs:out>
-            token outputs:realitykit:vertex.connect = </Root/torus/Material/GeometryModifier.outputs:out>
-            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1893.2079, -70.96633)
+            token outputs:realitykit:vertex.connect = </Root/torus/Material/GeometryModifier_1.outputs:out>
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (2017.9458, -126.34568)
             float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
-            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 1376
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 1462
 
             def Shader "MaterialXPreviewSurface" (
                 active = true
@@ -53,28 +53,6 @@ def Xform "Root"
                 int ui:nodegraph:node:stackingOrder = 1050
             }
 
-            def Shader "GeometryModifier"
-            {
-                uniform token info:id = "ND_realitykit_geometrymodifier_vertexshader"
-                float3 inputs:bitangent.connect = None
-                color4f inputs:color
-                float3 inputs:modelPositionOffset.connect = </Root/torus/Material/Subtract.outputs:out>
-                float3 inputs:normal.connect = </Root/torus/Material/Normalize_1.outputs:out>
-                float4 inputs:userAttribute
-                half2 inputs:userAttributeHalf2_0
-                half2 inputs:userAttributeHalf2_1
-                half4 inputs:userAttributeHalf4_0
-                half4 inputs:userAttributeHalf4_1
-                half4 inputs:userAttributeHalf4_2
-                half4 inputs:userAttributeHalf4_3
-                float2 inputs:uv0
-                float2 inputs:uv1
-                token outputs:out
-                float2 ui:nodegraph:node:pos = (1655.9604, 67.509865)
-                float2 ui:nodegraph:node:size = (196.5, 325)
-                int ui:nodegraph:node:stackingOrder = 1376
-            }
-
             def Shader "Multiply"
             {
                 uniform token info:id = "ND_multiply_vector3FA"
@@ -83,7 +61,7 @@ def Xform "Root"
                 float3 outputs:out
                 float2 ui:nodegraph:node:pos = (-314.89545, -169.25635)
                 float2 ui:nodegraph:node:size = (60, 36)
-                int ui:nodegraph:node:stackingOrder = 1460
+                int ui:nodegraph:node:stackingOrder = 1478
             }
 
             def Shader "Add"
@@ -122,10 +100,11 @@ def Xform "Root"
                 uniform token info:id = "ND_multiply_float"
                 float inputs:in1.connect = </Root/torus/Material/Sin.outputs:out>
                 float inputs:in2 = 2
+                float inputs:in2.connect = </Root/torus/Material/Amount.outputs:out>
                 float outputs:out
                 float2 ui:nodegraph:node:pos = (468.8476, -154.12631)
                 float2 ui:nodegraph:node:size = (60, 36)
-                int ui:nodegraph:node:stackingOrder = 1414
+                int ui:nodegraph:node:stackingOrder = 1482
                 string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out"]
             }
 
@@ -134,6 +113,7 @@ def Xform "Root"
                 uniform token info:id = "ND_multiply_float"
                 float inputs:in1.connect = </Root/torus/Material/AngleInXY.outputs:out>
                 float inputs:in2 = 2
+                float inputs:in2.connect = </Root/torus/Material/Period.outputs:out>
                 float outputs:out
                 float2 ui:nodegraph:node:pos = (252.99377, -162.20807)
                 float2 ui:nodegraph:node:size = (60, 36)
@@ -168,9 +148,9 @@ def Xform "Root"
                 float inputs:in1.connect = </Root/torus/Material/Sin_1.outputs:out>
                 float inputs:in2 = -1
                 float outputs:out
-                float2 ui:nodegraph:node:pos = (359.8561, -31.287186)
+                float2 ui:nodegraph:node:pos = (371.0361, -31.631416)
                 float2 ui:nodegraph:node:size = (60, 36)
-                int ui:nodegraph:node:stackingOrder = 1293
+                int ui:nodegraph:node:stackingOrder = 1477
             }
 
             def Shader "Cos_1"
@@ -188,6 +168,7 @@ def Xform "Root"
                 uniform token info:id = "ND_multiply_float"
                 float inputs:in1.connect = </Root/torus/Material/AngleInXY.outputs:out>
                 float inputs:in2 = 2
+                float inputs:in2.connect = </Root/torus/Material/Period.outputs:out>
                 float outputs:out
                 float2 ui:nodegraph:node:pos = (155.99112, 18.11369)
                 float2 ui:nodegraph:node:size = (60, 36)
@@ -199,10 +180,11 @@ def Xform "Root"
                 uniform token info:id = "ND_multiply_float"
                 float inputs:in1.connect = </Root/torus/Material/Cos_1.outputs:out>
                 float inputs:in2 = 2
+                float inputs:in2.connect = </Root/torus/Material/Amount.outputs:out>
                 float outputs:out
-                float2 ui:nodegraph:node:pos = (357.7647, 23.645992)
+                float2 ui:nodegraph:node:pos = (367.07388, 63.658955)
                 float2 ui:nodegraph:node:size = (60, 36)
-                int ui:nodegraph:node:stackingOrder = 1293
+                int ui:nodegraph:node:stackingOrder = 1480
             }
 
             def Shader "Normalize"
@@ -283,9 +265,9 @@ def Xform "Root"
                 float outputs:outx
                 float outputs:outy
                 float outputs:outz
-                float2 ui:nodegraph:node:pos = (-128.86594, -145.50044)
+                float2 ui:nodegraph:node:pos = (-106.70054, -156.22395)
                 float2 ui:nodegraph:node:size = (119, 145)
-                int ui:nodegraph:node:stackingOrder = 1034
+                int ui:nodegraph:node:stackingOrder = 1469
             }
 
             def Shader "AngleInXY"
@@ -345,6 +327,68 @@ def Xform "Root"
                 float2 ui:nodegraph:node:size = (162, 54)
                 int ui:nodegraph:node:stackingOrder = 1416
             }
+
+            def Shader "GeometryModifier_1"
+            {
+                uniform token info:id = "ND_realitykit_geometrymodifier_2_0_vertexshader"
+                float3 inputs:bitangent
+                color4f inputs:color
+                float3 inputs:modelPositionOffset.connect = </Root/torus/Material/Subtract.outputs:out>
+                float3 inputs:normal.connect = </Root/torus/Material/Normalize_1.outputs:out>
+                float2 inputs:uv0
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1714.8289, 29.71144)
+                int ui:nodegraph:node:stackingOrder = 1467
+            }
+
+            def Shader "Period"
+            {
+                uniform token info:id = "ND_constant_float"
+                float inputs:value = 2
+                float outputs:out
+                float2 ui:nodegraph:node:pos = (-82.61179, 31.361288)
+                int ui:nodegraph:node:stackingOrder = 1554
+            }
+
+            def Shader "Amount"
+            {
+                uniform token info:id = "ND_constant_float"
+                float inputs:value = 3
+                float inputs:value.connect = </Root/torus/Material/Remap.outputs:out>
+                float outputs:out
+                float2 ui:nodegraph:node:pos = (2.7198405, 196.30069)
+                int ui:nodegraph:node:stackingOrder = 1497
+            }
+
+            def Shader "Time"
+            {
+                uniform token info:id = "ND_time_float"
+                float outputs:out
+                float2 ui:nodegraph:node:pos = (-568.6715, 173.6863)
+                int ui:nodegraph:node:stackingOrder = 1536
+            }
+
+            def Shader "Sin_2"
+            {
+                uniform token info:id = "ND_sin_float"
+                float inputs:in.connect = </Root/torus/Material/Time.outputs:out>
+                float outputs:out
+                float2 ui:nodegraph:node:pos = (-391.6851, 176.24557)
+                int ui:nodegraph:node:stackingOrder = 1540
+            }
+
+            def Shader "Remap"
+            {
+                uniform token info:id = "ND_remap_float"
+                float inputs:in.connect = </Root/torus/Material/Sin_2.outputs:out>
+                float inputs:inhigh
+                float inputs:inlow = -1
+                float inputs:outhigh = 4
+                float inputs:outlow
+                float outputs:out
+                float2 ui:nodegraph:node:pos = (-213.32172, 249.23724)
+                int ui:nodegraph:node:stackingOrder = 1551
+            }
         }
 
         over "______" (
@@ -354,385 +398,6 @@ def Xform "Root"
             rel material:binding = </Root/torus/Material> (
                 bindMaterialAs = "weakerThanDescendants"
             )
-        }
-
-        def Material "Material_Compose" (
-            active = true
-        )
-        {
-            prepend token outputs:mtlx:surface.connect = </Root/torus/Material_Compose/MaterialXPreviewSurface.outputs:out>
-            token outputs:realitykit:vertex.connect = </Root/torus/Material_Compose/GeometryModifier.outputs:out>
-            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1185.1113, -94.58195)
-            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
-            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 1210
-
-            def Shader "MaterialXPreviewSurface" (
-                active = true
-            )
-            {
-                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
-                color3f inputs:diffuseColor = (0.023419624, 0.2832663, 0.46135616) (
-                    colorSpace = "Input - Texture - sRGB - Display P3"
-                )
-                color3f inputs:diffuseColor.connect = None
-                token outputs:out
-                float2 ui:nodegraph:node:pos = (946.2752, -267.2524)
-                float2 ui:nodegraph:node:size = (207.5, 199)
-                int ui:nodegraph:node:stackingOrder = 1210
-            }
-
-            def Shader "GeometryModifier"
-            {
-                uniform token info:id = "ND_realitykit_geometrymodifier_vertexshader"
-                float3 inputs:bitangent.connect = None
-                color4f inputs:color
-                float3 inputs:modelPositionOffset.connect = </Root/torus/Material_Compose/Subtract.outputs:out>
-                float3 inputs:normal.connect = </Root/torus/Material_Compose/OffsetNormal.outputs:Normalize_1_out>
-                float4 inputs:userAttribute
-                half2 inputs:userAttributeHalf2_0
-                half2 inputs:userAttributeHalf2_1
-                half4 inputs:userAttributeHalf4_0
-                half4 inputs:userAttributeHalf4_1
-                half4 inputs:userAttributeHalf4_2
-                half4 inputs:userAttributeHalf4_3
-                float2 inputs:uv0
-                float2 inputs:uv1
-                token outputs:out
-                float2 ui:nodegraph:node:pos = (947.86395, 43.89425)
-                float2 ui:nodegraph:node:size = (196.5, 325)
-                int ui:nodegraph:node:stackingOrder = 1252
-            }
-
-            def Shader "Subtract"
-            {
-                uniform token info:id = "ND_subtract_vector3"
-                float3 inputs:in1.connect = </Root/torus/Material_Compose/RecoverSmallRing.outputs:Add_1_out>
-                float3 inputs:in2.connect = </Root/torus/Material_Compose/Position.outputs:out>
-                float3 outputs:out
-                float2 ui:nodegraph:node:pos = (796.75977, -57.785767)
-                float2 ui:nodegraph:node:size = (61.5, 36)
-                int ui:nodegraph:node:stackingOrder = 1270
-            }
-
-            def Shader "AngleInXY"
-            {
-                uniform token info:id = "ND_atan2_float"
-                float inputs:inx.connect = </Root/torus/Material_Compose/CenterLine.outputs:CenterLine_outy>
-                float inputs:iny.connect = </Root/torus/Material_Compose/CenterLine.outputs:CenterLine_outx>
-                float outputs:out
-                float2 ui:nodegraph:node:pos = (3.2605534, -87.12691)
-                float2 ui:nodegraph:node:size = (151, 53)
-                int ui:nodegraph:node:stackingOrder = 1284
-                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
-            }
-
-            def Shader "CenterOffset"
-            {
-                uniform token info:id = "ND_combine3_vector3"
-                float inputs:in1.connect = </Root/torus/Material_Compose/CenterLine.outputs:CenterLine_outx>
-                float inputs:in2.connect = </Root/torus/Material_Compose/CenterLine.outputs:CenterLine_outy>
-                float inputs:in3.connect = </Root/torus/Material_Compose/OffsetInZ.outputs:Multiply_1_out>
-                float3 outputs:out
-                float2 ui:nodegraph:node:pos = (419.60385, -212.583)
-                float2 ui:nodegraph:node:size = (162, 54)
-                int ui:nodegraph:node:stackingOrder = 1278
-            }
-
-            def NodeGraph "CenterLine"
-            {
-                prepend float outputs:CenterLine_outx.connect = </Root/torus/Material_Compose/CenterLine/CenterLine.outputs:outx>
-                prepend float outputs:CenterLine_outy.connect = </Root/torus/Material_Compose/CenterLine/CenterLine.outputs:outy>
-                float2 ui:nodegraph:node:pos = (-194.51707, -144.88103)
-                float2 ui:nodegraph:node:size = (120, 99)
-                int ui:nodegraph:node:stackingOrder = 1128
-                float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (780.5, 72.5)
-                float2 ui:nodegraph:realitykit:subgraphOutputs:size = (177.49918, 99)
-
-                def Shader "Multiply"
-                {
-                    uniform token info:id = "ND_multiply_vector3FA"
-                    float3 inputs:in1.connect = </Root/torus/Material_Compose/CenterLine/Normal.outputs:out>
-                    float inputs:in2 = -0.25
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (255.25, 50.75)
-                    float2 ui:nodegraph:node:size = (60, 36)
-                    int ui:nodegraph:node:stackingOrder = 1142
-                }
-
-                def Shader "Normal"
-                {
-                    uniform token info:id = "ND_normal_vector3"
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (64.25, 50.75)
-                    float2 ui:nodegraph:node:size = (128.5, 40)
-                    int ui:nodegraph:node:stackingOrder = 1141
-                }
-
-                def Shader "CenterLine"
-                {
-                    uniform token info:id = "ND_separate3_vector3"
-                    float3 inputs:in.connect = </Root/torus/Material_Compose/CenterLine/Add.outputs:out>
-                    float outputs:outx
-                    float outputs:outy
-                    float outputs:outz
-                    float2 ui:nodegraph:node:pos = (563, 72.5)
-                    float2 ui:nodegraph:node:size = (119, 145)
-                    int ui:nodegraph:node:stackingOrder = 1141
-                }
-
-                def Shader "Add"
-                {
-                    uniform token info:id = "ND_add_vector3"
-                    float3 inputs:in1.connect = </Root/torus/Material_Compose/CenterLine/Multiply.outputs:out>
-                    float3 inputs:in2.connect = </Root/torus/Material_Compose/CenterLine/Position.outputs:out>
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (412.75, 72.5)
-                    float2 ui:nodegraph:node:size = (61.5, 36.5)
-                    int ui:nodegraph:node:stackingOrder = 1141
-                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:in1"]
-                }
-
-                def Shader "Position"
-                {
-                    uniform token info:id = "ND_position_vector3"
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (255.25, 168.75)
-                    float2 ui:nodegraph:node:size = (133.5, 40)
-                    int ui:nodegraph:node:stackingOrder = 1141
-                }
-            }
-
-            def NodeGraph "OffsetTangent"
-            {
-                prepend float inputs:Cos_in.connect = </Root/torus/Material_Compose/AngleInXY.outputs:out>
-                prepend float inputs:Multiply_4_in1.connect = </Root/torus/Material_Compose/AngleInXY.outputs:out>
-                prepend float inputs:Sin_1_in.connect = </Root/torus/Material_Compose/AngleInXY.outputs:out>
-                prepend float3 outputs:Normalize_out.connect = </Root/torus/Material_Compose/OffsetTangent/Normalize.outputs:out>
-                float2 ui:nodegraph:node:pos = (238.28065, 61.17666)
-                float2 ui:nodegraph:node:size = (140.5, 145)
-                int ui:nodegraph:node:stackingOrder = 1260
-
-                def Shader "Multiply_3"
-                {
-                    uniform token info:id = "ND_multiply_float"
-                    float inputs:in1.connect = </Root/torus/Material_Compose/OffsetTangent/Sin_1.outputs:out>
-                    float inputs:in2 = -1
-                    float outputs:out
-                    float2 ui:nodegraph:node:pos = (349.93484, 24.756107)
-                    float2 ui:nodegraph:node:size = (60, 36)
-                    int ui:nodegraph:node:stackingOrder = 1250
-                }
-
-                def Shader "Sin_1"
-                {
-                    uniform token info:id = "ND_sin_float"
-                    float inputs:in.connect = </Root/torus/Material_Compose/OffsetTangent.inputs:Sin_1_in>
-                    float outputs:out
-                    float2 ui:nodegraph:node:pos = (247.65997, 12.668579)
-                    float2 ui:nodegraph:node:size = (118, 53)
-                    int ui:nodegraph:node:stackingOrder = 1250
-                }
-
-                def Shader "Tangent"
-                {
-                    uniform token info:id = "ND_combine3_vector3"
-                    float inputs:in1.connect = </Root/torus/Material_Compose/OffsetTangent/Cos.outputs:out>
-                    float inputs:in2.connect = </Root/torus/Material_Compose/OffsetTangent/Multiply_3.outputs:out>
-                    float inputs:in3.connect = </Root/torus/Material_Compose/OffsetTangent/Multiply_5.outputs:out>
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (484.26523, 5.195465)
-                    float2 ui:nodegraph:node:size = (131.5, 54)
-                    int ui:nodegraph:node:stackingOrder = 1250
-                }
-
-                def Shader "Cos"
-                {
-                    uniform token info:id = "ND_cos_float"
-                    float inputs:in.connect = </Root/torus/Material_Compose/OffsetTangent.inputs:Cos_in>
-                    float outputs:out
-                    float2 ui:nodegraph:node:pos = (261.57233, -46.668884)
-                    float2 ui:nodegraph:node:size = (116, 40)
-                    int ui:nodegraph:node:stackingOrder = 1250
-                }
-
-                def Shader "Cos_1"
-                {
-                    uniform token info:id = "ND_cos_float"
-                    float inputs:in.connect = </Root/torus/Material_Compose/OffsetTangent/Multiply_4.outputs:out>
-                    float outputs:out
-                    float2 ui:nodegraph:node:pos = (244.53389, 74.62213)
-                    float2 ui:nodegraph:node:size = (122.5, 53)
-                    int ui:nodegraph:node:stackingOrder = 1250
-                }
-
-                def Shader "Normalize"
-                {
-                    uniform token info:id = "ND_normalize_vector3"
-                    float3 inputs:in.connect = </Root/torus/Material_Compose/OffsetTangent/Tangent.outputs:out>
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (637.8689, 4.716049)
-                    float2 ui:nodegraph:node:size = (149, 40)
-                    int ui:nodegraph:node:stackingOrder = 1251
-                }
-
-                def Shader "Multiply_4"
-                {
-                    uniform token info:id = "ND_multiply_float"
-                    float inputs:in1.connect = </Root/torus/Material_Compose/OffsetTangent.inputs:Multiply_4_in1>
-                    float inputs:in2 = 2
-                    float outputs:out
-                    float2 ui:nodegraph:node:pos = (146.06984, 74.15698)
-                    float2 ui:nodegraph:node:size = (60, 36)
-                    int ui:nodegraph:node:stackingOrder = 1250
-                }
-
-                def Shader "Multiply_5"
-                {
-                    uniform token info:id = "ND_multiply_float"
-                    float inputs:in1.connect = </Root/torus/Material_Compose/OffsetTangent/Cos_1.outputs:out>
-                    float inputs:in2 = 2
-                    float outputs:out
-                    float2 ui:nodegraph:node:pos = (347.84344, 79.689285)
-                    float2 ui:nodegraph:node:size = (60, 36)
-                    int ui:nodegraph:node:stackingOrder = 1250
-                }
-            }
-
-            def NodeGraph "OffsetNormal"
-            {
-                prepend float3 inputs:Bitangent_in2.connect = </Root/torus/Material_Compose/OffsetTangent.outputs:Normalize_out>
-                prepend float3 inputs:OffsetNormal_in1.connect = </Root/torus/Material_Compose/OffsetTangent.outputs:Normalize_out>
-                prepend float3 outputs:Normalize_1_out.connect = </Root/torus/Material_Compose/OffsetNormal/Normalize_1.outputs:out>
-                float2 ui:nodegraph:node:pos = (437.35654, 57.302265)
-                float2 ui:nodegraph:node:size = (138, 127)
-                int ui:nodegraph:node:stackingOrder = 1290
-
-                def Shader "Bitangent"
-                {
-                    uniform token info:id = "ND_crossproduct_vector3"
-                    float3 inputs:in1.connect = </Root/torus/Material_Compose/OffsetNormal/Normal_1.outputs:out>
-                    float3 inputs:in2.connect = </Root/torus/Material_Compose/OffsetNormal.inputs:Bitangent_in2>
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (494.37213, 74.88211)
-                    float2 ui:nodegraph:node:size = (150.5, 53)
-                    int ui:nodegraph:node:stackingOrder = 1211
-                }
-
-                def Shader "OffsetNormal"
-                {
-                    uniform token info:id = "ND_crossproduct_vector3"
-                    float3 inputs:in1.connect = </Root/torus/Material_Compose/OffsetNormal.inputs:OffsetNormal_in1>
-                    float3 inputs:in2.connect = </Root/torus/Material_Compose/OffsetNormal/Bitangent.outputs:out>
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (642.5392, 1.5075989)
-                    float2 ui:nodegraph:node:size = (167.5, 53)
-                    int ui:nodegraph:node:stackingOrder = 1211
-                }
-
-                def Shader "Normal_1"
-                {
-                    uniform token info:id = "ND_normal_vector3"
-                    string inputs:space
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (389.56378, -10.710144)
-                    float2 ui:nodegraph:node:size = (141, 53)
-                    int ui:nodegraph:node:stackingOrder = 1211
-                }
-
-                def Shader "Normalize_1"
-                {
-                    uniform token info:id = "ND_normalize_vector3"
-                    float3 inputs:in.connect = </Root/torus/Material_Compose/OffsetNormal/OffsetNormal.outputs:out>
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (822.675, -3.0063477)
-                    float2 ui:nodegraph:node:size = (161, 53)
-                    int ui:nodegraph:node:stackingOrder = 1211
-                }
-            }
-
-            def NodeGraph "OffsetInZ"
-            {
-                prepend float inputs:Multiply_2_in1.connect = </Root/torus/Material_Compose/AngleInXY.outputs:out>
-                prepend float outputs:Multiply_1_out.connect = </Root/torus/Material_Compose/OffsetInZ/Multiply_1.outputs:out>
-                float2 ui:nodegraph:node:pos = (224.18747, -143.35992)
-                float2 ui:nodegraph:node:size = (117.5, 109)
-                int ui:nodegraph:node:stackingOrder = 1281
-
-                def Shader "Sin"
-                {
-                    uniform token info:id = "ND_sin_float"
-                    float inputs:in.connect = </Root/torus/Material_Compose/OffsetInZ/Multiply_2.outputs:out>
-                    float outputs:out
-                    float2 ui:nodegraph:node:pos = (265.32507, -101.594604)
-                    float2 ui:nodegraph:node:size = (116, 40)
-                    int ui:nodegraph:node:stackingOrder = 1212
-                }
-
-                def Shader "Multiply_1"
-                {
-                    uniform token info:id = "ND_multiply_float"
-                    float inputs:in1.connect = </Root/torus/Material_Compose/OffsetInZ/Sin.outputs:out>
-                    float inputs:in2 = 2
-                    float outputs:out
-                    float2 ui:nodegraph:node:pos = (369.23334, -107.72868)
-                    float2 ui:nodegraph:node:size = (60, 36)
-                    int ui:nodegraph:node:stackingOrder = 1212
-                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out"]
-                }
-
-                def Shader "Multiply_2"
-                {
-                    uniform token info:id = "ND_multiply_float"
-                    float inputs:in1.connect = </Root/torus/Material_Compose/OffsetInZ.inputs:Multiply_2_in1>
-                    float inputs:in2 = 2
-                    float outputs:out
-                    float2 ui:nodegraph:node:pos = (165.66998, -101.35425)
-                    float2 ui:nodegraph:node:size = (60, 36)
-                    int ui:nodegraph:node:stackingOrder = 1212
-                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out"]
-                }
-            }
-
-            def Shader "Position"
-            {
-                uniform token info:id = "ND_position_vector3"
-                float3 outputs:out
-                float2 ui:nodegraph:node:pos = (643.37335, -18.343918)
-                float2 ui:nodegraph:node:size = (133.5, 40)
-                int ui:nodegraph:node:stackingOrder = 1274
-            }
-
-            def NodeGraph "RecoverSmallRing"
-            {
-                prepend float3 inputs:Add_1_in1.connect = </Root/torus/Material_Compose/CenterOffset.outputs:out>
-                prepend float3 inputs:Multiply_6_in1.connect = </Root/torus/Material_Compose/OffsetNormal.outputs:Normalize_1_out>
-                prepend float3 outputs:Add_1_out.connect = </Root/torus/Material_Compose/RecoverSmallRing/Add_1.outputs:out>
-                float2 ui:nodegraph:node:pos = (644.32117, -128.64569)
-                float2 ui:nodegraph:node:size = (164, 127)
-                int ui:nodegraph:node:stackingOrder = 1289
-
-                def Shader "Multiply_6"
-                {
-                    uniform token info:id = "ND_multiply_vector3FA"
-                    float3 inputs:in1.connect = </Root/torus/Material_Compose/RecoverSmallRing.inputs:Multiply_6_in1>
-                    float inputs:in2 = 0.25
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (588.84436, -134.4997)
-                    float2 ui:nodegraph:node:size = (60, 36)
-                    int ui:nodegraph:node:stackingOrder = 1278
-                }
-
-                def Shader "Add_1"
-                {
-                    uniform token info:id = "ND_add_vector3"
-                    float3 inputs:in1.connect = </Root/torus/Material_Compose/RecoverSmallRing.inputs:Add_1_in1>
-                    float3 inputs:in2.connect = </Root/torus/Material_Compose/RecoverSmallRing/Multiply_6.outputs:out>
-                    float3 outputs:out
-                    float2 ui:nodegraph:node:pos = (688.77386, -159.30598)
-                    float2 ui:nodegraph:node:size = (61.5, 36.5)
-                    int ui:nodegraph:node:stackingOrder = 1278
-                }
-            }
         }
     }
 }
